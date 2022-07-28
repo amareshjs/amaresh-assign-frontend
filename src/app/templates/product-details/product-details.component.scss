@@ -1,0 +1,22 @@
+.header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  height: 101px;
+}
+.center {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.right {
+  margin-top: 26px;
+}
+.left {
+  margin-top: 40px;
+}
+.left span {
+  font-weight: 600;
+  font-size: 14px;
+  color: #666666;
+  margin-left: 42%;
+  border-bottom: 2px solid #0156ff;
+}

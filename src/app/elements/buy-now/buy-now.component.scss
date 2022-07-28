@@ -1,0 +1,24 @@
+@import "../../../variable.scss";
+
+input[type="number"] {
+  background-color: $background-secendory;
+  border: none;
+  width: 70px;
+  height: 50px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  margin-right: 20px;
+}
+.custom-row {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.label {
+  font-weight: 400;
+  font-size: 14px;
+  color: $text-primary;
+  margin-right: 20px;
+}

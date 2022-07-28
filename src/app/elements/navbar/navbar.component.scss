@@ -1,0 +1,18 @@
+@import "../../../variable.scss";
+
+.navbar-customization {
+  //   position: absolute;
+  margin-left: 15%;
+  background-color: $background;
+  font-weight: 500;
+  font-size: small;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+  font-weight: 600;
+  font-size: 14px;
+  color: $text-primary;
+  cursor: pointer;
+}
+.navbar-brand {
+  margin-right: 38px;
+}

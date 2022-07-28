@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: "Poppins";
+  font-style: normal;
+}
+.custom-button {
+  width: 151px;
+  height: 50px;
+  background: #0156ff;
+  border-radius: 50px;
+  border: 0px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+}
