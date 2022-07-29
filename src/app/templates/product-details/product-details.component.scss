@@ -1,4 +1,6 @@
+@import "../../../variable.scss";
 .header {
+  left: 0px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   height: 101px;
 }
@@ -18,5 +20,15 @@
   font-size: 14px;
   color: #666666;
   margin-left: 42%;
-  border-bottom: 2px solid #0156ff;
+  border-bottom: 2px solid $border;
+}
+.left-col {
+  height: 70vh;
+  max-height: 747px;
+  background: $background-secendory;
+}
+.right-col {
+  height: 70vh;
+  max-height: 747px;
+  // background: $background-secendory;
 }

@@ -23,22 +23,26 @@ export class BuyNowComponent implements OnInit {
     // here we create a payment object
     const payment = {
       name: 'Iphone',
-      currency: 'ind',
-      amount: 99900,
-      quantity: '1',
-      cancelUrl: 'http://localhost:4200/cancel',
+      currency: 'usd',
       successUrl: 'http://localhost:4200/success',
+      cancelUrl: 'http://localhost:4200/cancel',
+      amount: 99900,
+      quantity: 1,
     };
 
     const stripe = await this.stripePromise;
 
     this.http
-      .post("http://localhost:9091/api/v1/payments", payment)
+      .post("http://localhost:9091/api/v1/products/payments", payment)
       .subscribe((data: any) => {
         stripe.redirectToCheckout({
           sessionId: data.id,
         });
       });
+
+    // this.http.post("http://localhost:9091/api/v1/products/payments", payment).subscribe((data: any) => {
+    //   console.log(data);
+    // })
   }
 
 }
