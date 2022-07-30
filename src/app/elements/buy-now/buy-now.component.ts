@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { loadStripe } from '@stripe/stripe-js';
 import { environment } from 'src/environments/environment';
 
@@ -10,24 +10,32 @@ import { environment } from 'src/environments/environment';
 })
 export class BuyNowComponent implements OnInit {
 
+  @Input() product: any;
+
   stripePromise = loadStripe(environment.stripe);
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+  ) {
+
+  }
 
   ngOnInit(): void {
+
+    console.log(this.product)
   }
 
 
-  async pay(): Promise<void> {
+
+
+  async pay(selectedQuantity: any): Promise<void> {
     // here we create a payment object
     const payment = {
-      name: 'Iphone',
-      currency: 'usd',
+      name: this.product.name,
+      productId: this.product.id,
       successUrl: 'http://localhost:4200/success',
       cancelUrl: 'http://localhost:4200/cancel',
-      amount: 99900,
-      quantity: 1,
+      quantity: selectedQuantity,
     };
 
     const stripe = await this.stripePromise;

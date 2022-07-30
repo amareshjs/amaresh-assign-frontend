@@ -8,14 +8,32 @@
       </div>
       <div class="col-md-6 center">
         <div class="right">
-          <app-buy-now></app-buy-now>
+          <app-buy-now [product]="product[0]"></app-buy-now>
         </div>
       </div>
     </div>
   </div>
   <div class="body">
     <div class="row">
-      <div class="col-md-7 left-col"></div>
+      <div class="col-md-7 left-col">
+        <div>
+          <div>
+            <p>APPLE PRODUCTS</p>
+          </div>
+          <div class="name">
+            <p>{{ product[0].name }}</p>
+          </div>
+          <div class="description">
+            <div>
+              <p>It’s magic, remastered!</p>
+            </div>
+            <div [innerHTML]="product[0].description"></div>
+          </div>
+          <div class="footer">
+            <p>{{ product[0].modelNumber }}</p>
+          </div>
+        </div>
+      </div>
       <div class="col-md-5 right-col"></div>
     </div>
   </div>
