@@ -16,7 +16,7 @@ export class ProductDetailsComponent implements OnInit {
     this._productApiService.getProducts().subscribe((res) => {
       this.product = res;
 
-      console.log(this.product[0])
+      console.log(this.product[0].image[2].imageUrl)
     })
 
   }

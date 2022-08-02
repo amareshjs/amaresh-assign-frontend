@@ -2,7 +2,7 @@
 
 .navbar-customization {
   //   position: absolute;
-  margin-left: 15%;
+  margin-left: 14%;
   background-color: $background;
   font-weight: 500;
   font-size: small;
@@ -15,4 +15,18 @@
 }
 .navbar-brand {
   margin-right: 38px;
+}
+
+@media (max-width: 1040px) {
+  .navbar-customization {
+    margin-left: 10%;
+    background-color: $background;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .navbar-brand {
+    margin-right: 28px;
+  }
 }

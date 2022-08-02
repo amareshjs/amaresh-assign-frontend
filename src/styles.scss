@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "/src/variable.scss";
+@import "~bootstrap/scss/bootstrap";
+
 body {
   font-family: "Poppins";
   font-style: normal;
@@ -23,3 +25,8 @@ body {
   margin-right: 0;
   margin-left: 0;
 }
+ul {
+  padding-left: 1rem !important;
+}
+
+/* Importing Bootstrap SCSS file. */

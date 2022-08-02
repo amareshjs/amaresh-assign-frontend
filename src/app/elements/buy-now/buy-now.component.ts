@@ -30,27 +30,25 @@ export class BuyNowComponent implements OnInit {
 
   async pay(selectedQuantity: any): Promise<void> {
     // here we create a payment object
+    console.log(selectedQuantity);
     const payment = {
       name: this.product.name,
       productId: this.product.id,
       successUrl: 'http://localhost:4200/success',
-      cancelUrl: 'http://localhost:4200/cancel',
+      cancelUrl: 'http://localhost:4200',
       quantity: selectedQuantity,
     };
 
     const stripe = await this.stripePromise;
 
     this.http
-      .post("http://localhost:9091/api/v1/products/payments", payment)
+      .post("http://localhost:9091/api/v1/checkout/payments", payment)
       .subscribe((data: any) => {
         stripe.redirectToCheckout({
           sessionId: data.id,
         });
       });
 
-    // this.http.post("http://localhost:9091/api/v1/products/payments", payment).subscribe((data: any) => {
-    //   console.log(data);
-    // })
   }
 
 }

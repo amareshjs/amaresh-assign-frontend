@@ -1,5 +1,5 @@
 <div class="container-fluid pad-0">
-  <div class="header">
+  <div class="header screen-lg">
     <div class="row">
       <div class="col-md-6">
         <div class="left">
@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="col-md-6 center">
-        <div class="right">
+        <div class="right screen-lg">
           <app-buy-now [product]="product[0]"></app-buy-now>
         </div>
       </div>
@@ -15,26 +15,101 @@
   </div>
   <div class="body">
     <div class="row">
-      <div class="col-md-7 left-col">
-        <div>
-          <div>
-            <p>APPLE PRODUCTS</p>
-          </div>
-          <div class="name">
-            <p>{{ product[0].name }}</p>
-          </div>
-          <div class="description">
-            <div>
-              <p>It’s magic, remastered!</p>
+      <div class="col-lg-5 order-lg-2 right-col">
+        <div class="carousel-container">
+          <div
+            id="carouselExampleInterval"
+            class="carousel slide carousel-fade"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item" data-bs-interval="1000">
+                <img
+                  [src]="product[0].image[0].imageUrl"
+                  class="d-block"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item active" data-bs-interval="1000">
+                <img
+                  [src]="product[0].image[1].imageUrl"
+                  class="d-block"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="1000">
+                <img
+                  [src]="product[0].image[2].imageUrl"
+                  class="d-block"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="1000">
+                <img
+                  [src]="product[0].image[3].imageUrl"
+                  class="d-block"
+                  alt="..."
+                />
+              </div>
             </div>
-            <div [innerHTML]="product[0].description"></div>
-          </div>
-          <div class="footer">
-            <p>{{ product[0].modelNumber }}</p>
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleInterval"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleInterval"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleInterval"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleInterval"
+                data-bs-slide-to="3"
+                aria-label="Slide 4"
+              ></button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-5 right-col"></div>
+      <div class="col-lg-7 order-lg-1 left-col">
+        <div class="content">
+          <div class="content-header screen-lg">
+            <p>APPLE PRODUCTS</p>
+          </div>
+          <div class="left screen-sm">
+            <span>About Product</span>
+          </div>
+          <div class="content-title">
+            <p>{{ product[0].name }}</p>
+          </div>
+          <div class="short-description">
+            <div>
+              <p>It’s magic, remastered!</p>
+            </div>
+            <div
+              class="content-desciption"
+              [innerHTML]="product[0].description"
+            ></div>
+            <div class="content-footer">
+              <p>{{ product[0].modelNumber }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right screen-sm">
+      <app-buy-now [product]="product[0]"></app-buy-now>
     </div>
   </div>
 </div>
