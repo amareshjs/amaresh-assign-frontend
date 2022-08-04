@@ -48,7 +48,5 @@ export class BuyNowComponent implements OnInit {
           sessionId: data.id,
         });
       });
-
   }
-
 }

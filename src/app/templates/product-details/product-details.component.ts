@@ -13,12 +13,13 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private _productApiService: ProductApiService) { }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData() {
     this._productApiService.getProducts().subscribe((res) => {
       this.product = res;
-
-      console.log(this.product[0].image[2].imageUrl)
     })
-
   }
 
 }
