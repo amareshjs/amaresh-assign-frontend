@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxHttpLoaderModule } from 'ngx-http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +15,8 @@ import { ElementsModule } from './elements/elements.module';
     BrowserModule,
     AppRoutingModule,
     ElementsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxHttpLoaderModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
